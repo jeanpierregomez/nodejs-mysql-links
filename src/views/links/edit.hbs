@@ -1,0 +1,31 @@
+<div class="col-md-4 mx-auto">
+
+    <div class="card">
+        <div class="card-body">
+            <form action="/categories/edit/{{link.id}}" method="POST">
+                <div class="form-group">
+                    <input required type="text" name="title" class="form-control" placeholder="Title" value="{{link.title}}" autofocus>
+                </div>
+                <div class="form-group">
+                    <input required type="url" name="url" class="form-control" placeholder="URL" value="{{link.url}}">
+                </div>
+                <div class="form-group">
+                    <textarea required name="description" rows="2" class="form-control" placeholder="Description">{{link.description}}</textarea>
+                </div>
+                <div class="form-group">
+                    <select name="category_id" class="form-control">
+                        <option value="">Seleccione una categoría</option>
+                        {{#each categories}}
+                            <option value="{{id}}">{{title}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-block">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
